@@ -93,11 +93,17 @@
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\scene.cpp" />
     <ClCompile Include="..\..\src\teapot.cpp" />
+    <ClCompile Include="GlobalShaderUniforms.cpp" />
+    <ClCompile Include="MyMaterials.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\FullScreenQuadScene.h" />
+    <ClInclude Include="..\..\include\FullScreenQuadShaderScene.h" />
     <ClInclude Include="..\..\include\scene.h" />
     <ClInclude Include="..\..\include\teapot.h" />
     <ClInclude Include="..\..\include\TriangleScene.h" />
+    <ClInclude Include="GlobalShaderUniforms.h" />
+    <ClInclude Include="MyMaterials.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Engine\build\win32\engine.vcxproj">
