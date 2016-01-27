@@ -2,6 +2,9 @@
 #define FSQ_H_
 
 #include "scene.h"
+#include "GlobalShaderUniforms.h"
+#include "MyMaterials.h"
+
 #include <core/log.h>
 #include <graphics/Shader.h>
 
@@ -181,6 +184,9 @@ private:
 	GLuint       m_hShaderProgram;
 
 	core::Ref<graphics::Shader> m_shader;
+
+	SharedShaderValues m_sharedValues;
+	core::Ref<graphics::ShaderUniforms> m_material;
 };
 
 

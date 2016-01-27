@@ -1,4 +1,4 @@
-﻿Build started 20.1.2016 15:40:43.
+﻿Build started 27.1.2016 16:24:10.
      1>Project "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\SimpleGraphicsTest.vcxproj" on node 2 (Build target(s)).
      1>PreBuildEvent:
          call copyassets.bat
@@ -58,18 +58,18 @@
          ..\..\assets\WoodNormal.tga
          26 File(s) copied
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\include" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GlobalShaderUniforms.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\include" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\GlobalShaderUniforms.cpp
          GlobalShaderUniforms.cpp
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\engine\include\graphics\shader.h(29): error C2039: 'Object' : is not a member of 'core'
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\engine\include\graphics\shader.h(29): error C2504: 'Object' : base class undefined
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\engine\include\graphics\shader.h(37): error C2614: 'graphics::Shader' : illegal member initialization: 'Object' is not a base or member
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\engine\include\graphics\shader.h(73): error C2039: 'Object' : is not a member of 'core'
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\engine\include\graphics\shader.h(73): error C2504: 'Object' : base class undefined
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\testprojects\simplegraphicstest\build\win32\globalshaderuniforms.cpp(5): error C2572: 'GlobalShaderUniforms::GlobalShaderUniforms' : redefinition of default parameter : parameter 2
-                 c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\testprojects\simplegraphicstest\build\win32\globalshaderuniforms.h(11) : see declaration of 'GlobalShaderUniforms::GlobalShaderUniforms'
-     1>c:\users\jussi-pekkajar\desktop\visuaalisetefektit\engine_2016\testprojects\simplegraphicstest\build\win32\globalshaderuniforms.cpp(5): error C2512: 'graphics::ShaderUniforms' : no appropriate default constructor available
-     1>Done Building Project "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\SimpleGraphicsTest.vcxproj" (Build target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\Debug\SimpleGraphicsTest.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\lib\win32" libegl.lib libglesv2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\Debug\SimpleGraphicsTest.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\Debug\SimpleGraphicsTest.lib" /MACHINE:X86 Debug\GlobalShaderUniforms.obj
+         Debug\main.obj
+         Debug\MyMaterials.obj
+         Debug\scene.obj
+         Debug\teapot.obj
+         "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\Debug\engine.lib"
+         SimpleGraphicsTest.vcxproj -> C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\Debug\SimpleGraphicsTest.exe
+     1>Done Building Project "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\SimpleGraphicsTest.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.44
+Time Elapsed 00:00:01.49

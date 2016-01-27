@@ -24,10 +24,10 @@
     <ClCompile Include="..\..\src\scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyMaterials.cpp">
+    <ClCompile Include="..\..\src\GlobalShaderUniforms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalShaderUniforms.cpp">
+    <ClCompile Include="..\..\src\MyMaterials.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,16 +41,16 @@
     <ClInclude Include="..\..\include\TriangleScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyMaterials.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\FullScreenQuadScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\FullScreenQuadShaderScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalShaderUniforms.h">
+    <ClInclude Include="..\..\include\GlobalShaderUniforms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\MyMaterials.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

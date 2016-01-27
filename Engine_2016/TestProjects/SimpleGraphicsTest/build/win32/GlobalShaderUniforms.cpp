@@ -1,9 +1,8 @@
 #include "GlobalShaderUniforms.h"
 
 
-GlobalShaderUniforms::GlobalShaderUniforms(graphics::Shader* shader, const SharedShaderValues* sharedShaderValues)
+GlobalShaderUniforms::GlobalShaderUniforms(graphics::Shader* shader, const SharedShaderValues* sharedShaderValues = 0) : ShaderUniforms(shader)
 {
-	m_shader = shader;
 	m_sharedShaderValues = sharedShaderValues;
 }
 

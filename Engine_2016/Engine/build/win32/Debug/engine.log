@@ -1,94 +1,8 @@
-﻿Build started 20.1.2016 12:32:01.
+﻿Build started 27.1.2016 15:51:55.
      1>Project "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\engine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\animation\AnimationTimeline.cpp ..\..\src\core\ElapsedTimer.cpp ..\..\src\core\FileStream.cpp ..\..\src\core\log.cpp ..\..\src\core\MemoryManager.cpp ..\..\src\core\Object.cpp ..\..\src\core\PropertySet.cpp ..\..\src\eastl\allocator.cpp ..\..\src\eastl\assert.cpp ..\..\src\eastl\fixed_pool.cpp ..\..\src\eastl\hashtable.cpp ..\..\src\eastl\red_black_tree.cpp ..\..\src\eastl\string.cpp ..\..\src\graphics\es_util.cpp ..\..\src\graphics\FrmInput.cpp ..\..\src\graphics\FrmResourceGLES.cpp ..\..\src\graphics\FrmShader.cpp ..\..\src\graphics\FrmUtils.cpp ..\..\src\graphics\FrmUtilsGLES.cpp ..\..\src\graphics\SpriteBatch.cpp ..\..\src\graphics\Texture.cpp ..\..\src\scene\Entity.cpp ..\..\src\slmath\float_util.cpp ..\..\src\slmath\intersect_util.cpp ..\..\src\slmath\mat4.cpp ..\..\src\slmath\quat.cpp ..\..\src\slmath\random.cpp ..\..\src\slmath\random_util.cpp ..\..\src\slmath\runtime_checks.cpp ..\..\src\slmath\slmath_lua.cpp ..\..\src\slmath\vec2.cpp ..\..\src\slmath\vec3.cpp ..\..\src\slmath\vec4.cpp ..\..\src\ticpp\ticpp.cpp ..\..\src\ticpp\tinystr.cpp ..\..\src\ticpp\tinyxml.cpp ..\..\src\ticpp\tinyxmlerror.cpp ..\..\src\ticpp\tinyxmlparser.cpp ..\..\src\win32\es_util_win32.cpp ..\..\src\win32\FrmNoise_Platform.cpp ..\..\src\win32\FrmPlatform.cpp ..\..\src\win32\FrmStdlib_Platform.cpp ..\..\src\win32\FrmUtils_Platform.cpp ..\..\src\win32\input_win32.cpp
-         input_win32.cpp
-         FrmUtils_Platform.cpp
-         FrmStdlib_Platform.cpp
-         FrmPlatform.cpp
-         FrmNoise_Platform.cpp
-         es_util_win32.cpp
-         tinyxmlparser.cpp
-         tinyxmlerror.cpp
-         tinyxml.cpp
-         tinystr.cpp
-         ticpp.cpp
-         vec4.cpp
-         vec3.cpp
-         vec2.cpp
-         slmath_lua.cpp
-         runtime_checks.cpp
-         random_util.cpp
-         random.cpp
-         quat.cpp
-         mat4.cpp
-         Generating Code...
-         Compiling...
-         intersect_util.cpp
-         float_util.cpp
-         Entity.cpp
-         Texture.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\graphics\SpriteBatch.cpp
          SpriteBatch.cpp
-         FrmUtilsGLES.cpp
-         FrmUtils.cpp
-         FrmShader.cpp
-         FrmResourceGLES.cpp
-         FrmInput.cpp
-         es_util.cpp
-         string.cpp
-         red_black_tree.cpp
-         hashtable.cpp
-         fixed_pool.cpp
-         assert.cpp
-         allocator.cpp
-         PropertySet.cpp
-         Object.cpp
-         MemoryManager.cpp
-         Generating Code...
-         Compiling...
-         log.cpp
-         FileStream.cpp
-         ElapsedTimer.cpp
-         AnimationTimeline.cpp
-         Generating Code...
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\src\lua\lapi.c ..\..\src\lua\lauxlib.c ..\..\src\lua\lbaselib.c ..\..\src\lua\lbitlib.c ..\..\src\lua\lcode.c ..\..\src\lua\lcorolib.c ..\..\src\lua\lctype.c ..\..\src\lua\ldblib.c ..\..\src\lua\ldebug.c ..\..\src\lua\ldo.c ..\..\src\lua\ldump.c ..\..\src\lua\lfunc.c ..\..\src\lua\lgc.c ..\..\src\lua\linit.c ..\..\src\lua\liolib.c ..\..\src\lua\llex.c ..\..\src\lua\lmathlib.c ..\..\src\lua\lmem.c ..\..\src\lua\loadlib.c ..\..\src\lua\lobject.c ..\..\src\lua\lopcodes.c ..\..\src\lua\loslib.c ..\..\src\lua\lparser.c ..\..\src\lua\lstate.c ..\..\src\lua\lstring.c ..\..\src\lua\lstrlib.c ..\..\src\lua\ltable.c ..\..\src\lua\ltablib.c ..\..\src\lua\ltm.c ..\..\src\lua\lua.c ..\..\src\lua\luac.c ..\..\src\lua\lundump.c ..\..\src\lua\lvm.c ..\..\src\lua\lzio.c
-         lzio.c
-         lvm.c
-         lundump.c
-         luac.c
-         lua.c
-         ltm.c
-         ltablib.c
-         ltable.c
-         lstrlib.c
-         lstring.c
-         lstate.c
-         lparser.c
-         loslib.c
-         lopcodes.c
-         lobject.c
-         loadlib.c
-         lmem.c
-         lmathlib.c
-         llex.c
-         liolib.c
-         Generating Code...
-         Compiling...
-         linit.c
-         lgc.c
-         lfunc.c
-         ldump.c
-         ldo.c
-         ldebug.c
-         ldblib.c
-         lctype.c
-         lcorolib.c
-         lcode.c
-         lbitlib.c
-         lbaselib.c
-         lauxlib.c
-         lapi.c
-         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\Debug\engine.lib" /NOLOGO Debug\AnimationTimeline.obj
          Debug\ElapsedTimer.obj
@@ -173,4 +87,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:17.46
+Time Elapsed 00:00:01.05
