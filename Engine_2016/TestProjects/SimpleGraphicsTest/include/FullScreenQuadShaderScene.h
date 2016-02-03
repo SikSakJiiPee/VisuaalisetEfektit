@@ -20,48 +20,8 @@ public:
 
 		m_count = 0.0f;
 		m_hShaderProgram = 0;
+		m_sharedValues.totalTime = 0.0f;
 
-		/*const char* g_strVSProgram = 
-			"attribute vec4 g_vVertex;											 \n"
-			"attribute vec4 g_vColor;											 \n"
-			"attribute vec2 g_vTexCoord;										 \n"
-			"varying   vec4 g_vVSColor;                                          \n"
-			"varying   vec2 g_vVSTexCoord;                                       \n"
-			"																	 \n"
-			"void main()														 \n"
-			"{																	 \n"
-			"    gl_Position  = vec4( g_vVertex.x, g_vVertex.y,                  \n"
-			"                         g_vVertex.z, g_vVertex.w );                \n"
-			"    g_vVSColor = g_vColor;                                          \n"
-			"    g_vVSTexCoord = g_vTexCoord;                                    \n"
-			"}																	 \n";
-
-
-		const char* g_strFSProgram =
-			"#ifdef GL_FRAGMENT_PRECISION_HIGH									 \n"
-			"   precision highp float;											 \n"
-			"#else																 \n"
-			"   precision mediump float;										 \n"
-			"#endif																 \n"
-			"																	 \n"
-			"varying   vec4 g_vVSColor;                                          \n"
-			"varying   vec2 g_vVSTexCoord;                                       \n"
-			"\n"
-			"uniform float totalTime;\n"
-			"																	 \n"
-			"void main()														 \n"
-			"{																	 \n"
-			"    float x = 256*g_vVSTexCoord.x;\n"
-			"    float y = 256*g_vVSTexCoord.y;\n"
-			"    float t = totalTime; \n"
-			"    float v = 0.0;\n"
-			"    v += 0.5 + (0.5 * sin(x/7.0+t));"
-			"    v += 0.5 + (0.5 * sin(y/5.0-t));"
-			"    v += 0.5 + (0.5 * sin((x+y)/6.0-t));"
-			"    v += 0.5 + (0.5 * sin(sqrt((x*x + y*y))/4.0-t));"
-			"    v = 0.25 * tan(2*v);\n"
-			"    gl_FragColor = vec4(v,v*g_vVSTexCoord.x,v*g_vVSTexCoord.y,1.0);     \n"
-			"}																	 \n";*/
 
 		FRM_SHADER_ATTRIBUTE attributes[] = {
 			{"g_vVertex", 0 },
@@ -72,10 +32,10 @@ public:
 		int numAttributes = sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE);
 		m_shader = new graphics::Shader("assets/FullScreenQuad.vs", "assets/PlasmaEffect.fs", attributes, numAttributes);
 
-		m_shader->bind();
+		
+		m_material = new GlobalShaderUniforms(m_shader, &m_sharedValues);
+		m_material->bind();
 
-		/*FrmCompileShaderProgram(g_strVSProgram,g_strFSProgram,
-			&m_hShaderProgram,attributes,sizeof(attributes)/sizeof(FRM_SHADER_ATTRIBUTE) );*/
 
 		checkOpenGL();
 	}
@@ -90,7 +50,7 @@ public:
 
     virtual void update( graphics::ESContext* esContext, float deltaTime )
 	{
-		m_count += deltaTime;
+		m_sharedValues.totalTime += deltaTime;
 
 	/*	if( m_count > 1.0f )
 			m_count = 0.0f;*/
@@ -140,16 +100,8 @@ public:
 		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 		checkOpenGL();
 
-		// Set the shader program and the texture
-		//glUseProgram( m_hShaderProgram );
-		//checkOpenGL();
-
-
-		GLint loc = glGetUniformLocation(m_shader->getProgram(), "totalTime");
-		if (loc != -1)
-		{
-			glUniform1f(loc, 10.0f*m_count);
-		}
+		m_material->bind();
+		m_material->getUniformLocations(m_shader);
 
 		// Draw the colored triangle
 		glVertexAttribPointer( 0, 4, GL_FLOAT, 0, 0, VertexPositions );

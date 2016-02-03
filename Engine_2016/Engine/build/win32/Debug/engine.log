@@ -1,4 +1,4 @@
-﻿Build started 27.1.2016 15:51:55.
+﻿Build started 3.2.2016 13:05:44.
      1>Project "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\engine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\Engine\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\graphics\SpriteBatch.cpp
@@ -87,4 +87,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.05
+Time Elapsed 00:00:01.72

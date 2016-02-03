@@ -11,12 +11,13 @@ public:
 	GlobalShaderUniforms(graphics::Shader* shader, const SharedShaderValues* sharedShaderValues = 0);
 	~GlobalShaderUniforms();
 
-	virtual void getUniformLocations(graphics::Shader* shader) {}
-	virtual void bind(graphics::Shader* shader) {}
+	virtual void getUniformLocations(graphics::Shader* shader);
+	virtual void bind(graphics::Shader* shader);
 
 private:
 	graphics::Shader* m_shader;
 	const SharedShaderValues* m_sharedShaderValues;
+	GLint m_id;
 };
 
 #endif
