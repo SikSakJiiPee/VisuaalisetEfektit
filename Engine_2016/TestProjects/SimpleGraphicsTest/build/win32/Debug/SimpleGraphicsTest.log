@@ -1,4 +1,4 @@
-﻿Build started 3.2.2016 14:30:42.
+﻿Build started 10.2.2016 14:58:50.
      1>Project "C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\SimpleGraphicsTest.vcxproj" on node 2 (Build target(s)).
      1>PreBuildEvent:
          call copyassets.bat
@@ -22,6 +22,8 @@
          ..\..\assets\MetalPlateNormal.tga
          ..\..\assets\Plane.obj
          ..\..\assets\PlasmaEffect.fs
+         ..\..\assets\Simple3d.fs
+         ..\..\assets\Simple3d.vs
          ..\..\assets\Sphere.obj
          ..\..\assets\Torus.obj
          ..\..\assets\TreeBark.tga
@@ -29,7 +31,7 @@
          ..\..\assets\WoodFloorDiffuse.tga
          ..\..\assets\WoodFloorNormal.tga
          ..\..\assets\WoodNormal.tga
-         26 File(s) copied
+         28 File(s) copied
          ..\..\assets\BedroomCubeMap_BK.tga
          ..\..\assets\BedroomCubeMap_DN.tga
          ..\..\assets\BedroomCubeMap_FR.tga
@@ -49,6 +51,8 @@
          ..\..\assets\MetalPlateNormal.tga
          ..\..\assets\Plane.obj
          ..\..\assets\PlasmaEffect.fs
+         ..\..\assets\Simple3d.fs
+         ..\..\assets\Simple3d.vs
          ..\..\assets\Sphere.obj
          ..\..\assets\Torus.obj
          ..\..\assets\TreeBark.tga
@@ -56,7 +60,7 @@
          ..\..\assets\WoodFloorDiffuse.tga
          ..\..\assets\WoodFloorNormal.tga
          ..\..\assets\WoodNormal.tga
-         26 File(s) copied
+         28 File(s) copied
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\include\graphics\win32" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\..\..\Engine\include" /I"C:\Users\jussi-pekkajar\Desktop\VisuaalisetEfektit\Engine_2016\TestProjects\SimpleGraphicsTest\build\win32\..\..\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\main.cpp
          main.cpp
@@ -72,4 +76,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.13
+Time Elapsed 00:00:01.53

@@ -4,8 +4,7 @@
 #include "graphics\Shader.h"
 #include "MyMaterials.h"
 
-class GlobalShaderUniforms :
-	public graphics::ShaderUniforms
+class GlobalShaderUniforms : public graphics::ShaderUniforms
 {
 public:
 	GlobalShaderUniforms(graphics::Shader* shader, const SharedShaderValues* sharedShaderValues = 0);
@@ -15,7 +14,6 @@ public:
 	virtual void bind(graphics::Shader* shader);
 
 private:
-	graphics::Shader* m_shader;
 	const SharedShaderValues* m_sharedShaderValues;
 	GLint m_id;
 };
