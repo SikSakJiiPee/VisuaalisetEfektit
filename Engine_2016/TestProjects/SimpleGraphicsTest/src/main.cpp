@@ -10,6 +10,7 @@
 //#include "FullScreenQuadScene.h"
 //#include "FullScreenQuadShaderScene.h"
 #include "SimpleMeshRenderingScene.h"
+#include "BlinnPhongScene.h"
 
 // Current scene and max num of scenes
 core::Ref<Scene> m_currentScene = 0;
@@ -41,6 +42,7 @@ void changeCurrentScene(int index)
 	{
 	case 0: m_currentScene = new TriangleScene(); break;
 	case 1: m_currentScene = new SimpleMeshRenderingScene(); break;
+	case 2: m_currentScene = new BlinnPhongScene(); break;
 	default:
 		break;
 	}

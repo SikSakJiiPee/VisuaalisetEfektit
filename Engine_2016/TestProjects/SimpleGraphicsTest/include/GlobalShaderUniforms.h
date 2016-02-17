@@ -8,14 +8,14 @@ class GlobalShaderUniforms : public graphics::ShaderUniforms
 {
 public:
 	GlobalShaderUniforms(graphics::Shader* shader, const SharedShaderValues* sharedShaderValues = 0);
-	~GlobalShaderUniforms();
+	virtual ~GlobalShaderUniforms();
 
 	virtual void getUniformLocations(graphics::Shader* shader);
 	virtual void bind(graphics::Shader* shader);
 
 private:
 	const SharedShaderValues* m_sharedShaderValues;
-	GLint m_id;
+	GLint m_ids[8];
 };
 
 #endif
