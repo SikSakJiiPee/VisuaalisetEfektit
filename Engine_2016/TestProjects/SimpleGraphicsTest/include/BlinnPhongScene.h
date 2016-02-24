@@ -26,7 +26,7 @@ public:
 			new graphics::Shader("assets/Simple3d.vs", "assets/Simple3d.fs",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
 
-		m_material = new GlobalShaderUniforms(shader, m_sharedValues);
+		m_material = new GlobalShaderUniforms(shader, &m_sharedValues);
 
 		//Create mesh
 		m_mesh = createTeapotMesh();
@@ -80,20 +80,20 @@ public:
 		m_matModel = slmath::translation(slmath::vec3(0.0f, 0.0f, 0.0f)) * m_matModel; //Translate
 
 		//calculate needed stuff for m_sharedValues
-		m_sharedValues->matModel = m_matModel;
-		m_sharedValues->matView = m_matView;
-		m_sharedValues->matProj = m_matProjection;
+		m_sharedValues.matModel = m_matModel;
+		m_sharedValues.matView = m_matView;
+		m_sharedValues.matProj = m_matProjection;
 
 		slmath::mat4 matModelView = m_matView * m_matModel;
 		slmath::mat4 matModelViewProj = m_matProjection * matModelView;
 		slmath::mat4 matNormal = slmath::transpose(slmath::inverse(matModelView));
 
-		m_sharedValues->matModelView = matModelView;
-		m_sharedValues->matNormal = matNormal;
-		m_sharedValues->matModelViewProj = matModelViewProj;
+		m_sharedValues.matModelView = matModelView;
+		m_sharedValues.matNormal = matNormal;
+		m_sharedValues.matModelViewProj = matModelViewProj;
 
-		m_sharedValues->lightPos = slmath::vec3(0.0f, 70.0f, 70.0f);
-		m_sharedValues->camPos = slmath::vec3(0.0f, 70.0f, 70.0f);
+		m_sharedValues.lightPos = slmath::vec3(0.0f, 70.0f, 70.0f);
+		m_sharedValues.camPos = slmath::vec3(0.0f, 70.0f, 70.0f);
 	}
 
 	virtual void render(graphics::ESContext *esContext)
@@ -117,7 +117,7 @@ public:
 		slmath::mat4 matModelViewProj = m_matProjection * matModelView;
 
 		//Set matrix to shared values
-		m_sharedValues->matModelViewProj = matModelViewProj;
+		m_sharedValues.matModelViewProj = matModelViewProj;
 
 		//Bind material (sets uniform values)
 		m_material->bind();
@@ -134,6 +134,6 @@ private:
 	slmath::mat4 m_matView;
 	slmath::mat4 m_matModel;
 	core::Ref<graphics::Mesh>m_mesh; 
-	SharedShaderValues* m_sharedValues;
+	SharedShaderValues m_sharedValues;
 	core::Ref<graphics::ShaderUniforms> m_material;
 };
