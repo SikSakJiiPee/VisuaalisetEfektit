@@ -26,7 +26,7 @@ public:
 			new graphics::Shader("assets/Simple3d.vs", "assets/Simple3d.fs",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
 
-		m_material = new GlobalShaderUniforms(shader, &m_sharedValues);
+		m_material = new GlobalShaderUniforms(shader, m_sharedValues);
 
 		//Create mesh
 		m_mesh = createTeapotMesh();
@@ -117,7 +117,7 @@ public:
 		slmath::mat4 matModelViewProj = m_matProjection * matModelView;
 
 		//Set matrix to shared values
-		m_sharedValues.matModelViewProj = matModelViewProj;
+		m_sharedValues->matModelViewProj = matModelViewProj;
 
 		//Bind material (sets uniform values)
 		m_material->bind();
@@ -134,6 +134,6 @@ private:
 	slmath::mat4 m_matView;
 	slmath::mat4 m_matModel;
 	core::Ref<graphics::Mesh>m_mesh; 
-	SharedShaderValues m_sharedValues;
+	SharedShaderValues* m_sharedValues;
 	core::Ref<graphics::ShaderUniforms> m_material;
 };

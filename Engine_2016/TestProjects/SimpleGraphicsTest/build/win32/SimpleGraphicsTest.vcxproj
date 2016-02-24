@@ -106,6 +106,7 @@
     <ClInclude Include="..\..\include\SimpleMeshRenderingScene.h" />
     <ClInclude Include="..\..\include\teapot.h" />
     <ClInclude Include="..\..\include\TriangleScene.h" />
+    <ClInclude Include="SimpleMaterialUniforms.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Engine\build\win32\engine.vcxproj">
