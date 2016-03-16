@@ -1,7 +1,7 @@
 #pragma once
 
 #include "scene.h"
-#include "GlobalShaderUniforms.h"
+#include "SimpleMaterialUniforms.h"
 #include "MyMaterials.h"
 #include "teapot.h"
 
@@ -22,11 +22,20 @@ public:
 			{ "g_vNormalOS", graphics::ATTRIB_NORMAL }
 		};
 
-		core::Ref<graphics::Shader> shader =
-			new graphics::Shader("assets/Simple3d.vs", "assets/Simple3d.fs",
+		m_shader =
+			new graphics::Shader("assets/Blinn-phong.vs", "assets/Blinn-phong.fs",
 			attributes, sizeof(attributes) / sizeof(FRM_SHADER_ATTRIBUTE));
 
-		m_material = new GlobalShaderUniforms(shader, &m_sharedValues);
+		SimpleMaterialUniforms* simpleMaterialUniforms = new SimpleMaterialUniforms(m_shader, &m_sharedValues);
+
+		//Material values for mesh
+		simpleMaterialUniforms->vAmbient = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
+		simpleMaterialUniforms->vDiffuse = slmath::vec4(0.5f, 0.2f, 1.0f, 1.0f);
+		simpleMaterialUniforms->vSpecular = slmath::vec4(1.0f, 1.0f, 1.0f, 5.0f);
+
+		m_material = simpleMaterialUniforms;
+
+		checkOpenGL();
 
 		//Create mesh
 		m_mesh = createTeapotMesh();
@@ -79,21 +88,7 @@ public:
 		m_matModel = slmath::rotationY(time) * m_matModel; //Rotate according to total time
 		m_matModel = slmath::translation(slmath::vec3(0.0f, 0.0f, 0.0f)) * m_matModel; //Translate
 
-		//calculate needed stuff for m_sharedValues
-		m_sharedValues.matModel = m_matModel;
-		m_sharedValues.matView = m_matView;
-		m_sharedValues.matProj = m_matProjection;
 
-		slmath::mat4 matModelView = m_matView * m_matModel;
-		slmath::mat4 matModelViewProj = m_matProjection * matModelView;
-		slmath::mat4 matNormal = slmath::transpose(slmath::inverse(matModelView));
-
-		m_sharedValues.matModelView = matModelView;
-		m_sharedValues.matNormal = matNormal;
-		m_sharedValues.matModelViewProj = matModelViewProj;
-
-		m_sharedValues.lightPos = slmath::vec3(0.0f, 70.0f, 70.0f);
-		m_sharedValues.camPos = slmath::vec3(0.0f, 70.0f, 70.0f);
 	}
 
 	virtual void render(graphics::ESContext *esContext)
@@ -112,9 +107,21 @@ public:
 		glDepthFunc(GL_LEQUAL);
 		checkOpenGL();
 
-		//These values are needed to update for each mesh which is rendered (different model matrix)
+		//calculate needed stuff for m_sharedValues
+		m_sharedValues.matModel = m_matModel;
+		m_sharedValues.matView = m_matView;
+		m_sharedValues.matProj = m_matProjection;
+
 		slmath::mat4 matModelView = m_matView * m_matModel;
 		slmath::mat4 matModelViewProj = m_matProjection * matModelView;
+		slmath::mat4 matNormal = slmath::transpose(slmath::inverse(matModelView));
+
+		m_sharedValues.matModelView = matModelView;
+		m_sharedValues.matNormal = matNormal;
+		m_sharedValues.matModelViewProj = matModelViewProj;
+
+		m_sharedValues.lightPos = slmath::vec3(0.0f, 70.0f, 70.0f);
+		m_sharedValues.camPos = slmath::vec3(0.0f, 70.0f, 70.0f);
 
 		//Set matrix to shared values
 		m_sharedValues.matModelViewProj = matModelViewProj;
@@ -125,6 +132,9 @@ public:
 
 		//Render the mesh using active material
 		m_mesh->render();
+
+		glDisable(GL_CULL_FACE);
+		glDisable(GL_DEPTH_TEST);
 		checkOpenGL();
 	}
 
@@ -134,6 +144,7 @@ private:
 	slmath::mat4 m_matView;
 	slmath::mat4 m_matModel;
 	core::Ref<graphics::Mesh>m_mesh; 
-	SharedShaderValues m_sharedValues;
+	core::Ref<graphics::Shader> m_shader;
 	core::Ref<graphics::ShaderUniforms> m_material;
+	SharedShaderValues m_sharedValues;
 };

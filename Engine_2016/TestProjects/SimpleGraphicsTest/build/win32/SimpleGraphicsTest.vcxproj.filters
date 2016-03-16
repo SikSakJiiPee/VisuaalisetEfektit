@@ -59,7 +59,7 @@
     <ClInclude Include="..\..\include\BlinnPhongScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleMaterialUniforms.h">
+    <ClInclude Include="..\..\include\SimpleMaterialUniforms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

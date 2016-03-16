@@ -103,10 +103,10 @@
     <ClInclude Include="..\..\include\GlobalShaderUniforms.h" />
     <ClInclude Include="..\..\include\MyMaterials.h" />
     <ClInclude Include="..\..\include\scene.h" />
+    <ClInclude Include="..\..\include\SimpleMaterialUniforms.h" />
     <ClInclude Include="..\..\include\SimpleMeshRenderingScene.h" />
     <ClInclude Include="..\..\include\teapot.h" />
     <ClInclude Include="..\..\include\TriangleScene.h" />
-    <ClInclude Include="SimpleMaterialUniforms.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Engine\build\win32\engine.vcxproj">

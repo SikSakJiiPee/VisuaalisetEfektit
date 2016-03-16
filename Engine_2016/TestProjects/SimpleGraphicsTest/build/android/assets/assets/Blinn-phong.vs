@@ -1,7 +1,7 @@
 //Uniforms
 uniform mat4 g_matView;
 uniform mat4 g_matModelView;
-uniform mat4 g_matModelProj;
+uniform mat4 g_matModelViewProj;
 uniform mat4 g_matNormal;
 uniform vec3 g_lightPos;
 
@@ -16,9 +16,9 @@ varying vec3 g_vLightVecES;
 
 void main()
 {
-	vec4 vPositionES = g_matModelView * g_vPositionsOS;
-	vec4 vPositionCS = g_matModelViewProj * g_vPositionsOS;
-	vec3 vLightPosES = (g_matView * vec4(g_lightPos, 1.0)).xyx;
+	vec4 vPositionES = g_matModelView * g_vPositionOS;
+	vec4 vPositionCS = g_matModelViewProj * g_vPositionOS;
+	vec3 vLightPosES = (g_matView * vec4(g_lightPos, 1.0)).xyz;
 	
 	//Transform object-space normals to eye-space
 	vec3 vNormalES = (g_matNormal * vec4(g_vNormalOS, 0.0)).xyz;

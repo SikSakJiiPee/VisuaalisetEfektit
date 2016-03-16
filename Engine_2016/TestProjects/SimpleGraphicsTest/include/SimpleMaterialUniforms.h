@@ -13,7 +13,6 @@ public:
 	slmath::vec4 vDiffuse; //Ambient color of the material (rgba)
 	slmath::vec4 vSpecular; //Specular color of the material (rgb). Specular exponent (a)
 
-public:
 	SimpleMaterialUniforms(graphics::Shader* shader, SharedShaderValues* sharedValues = 0)
 		: ShaderUniforms(shader)
 		, m_globalShaderUniforms(new GlobalShaderUniforms(shader,sharedValues))
@@ -22,6 +21,14 @@ public:
 
 	virtual ~SimpleMaterialUniforms()
 	{
+	}
+
+	virtual void getUniformLocations(graphics::Shader* shader)
+	{
+		m_globalShaderUniforms->getUniformLocations(shader);
+		m_materialAmbientLoc = glGetUniformLocation(shader->getProgram(), "g_Material.vAmbient");
+		m_materialDiffuseLoc = glGetUniformLocation(shader->getProgram(), "g_Material.vDiffuse");
+		m_materialSpecularLoc = glGetUniformLocation(shader->getProgram(), "g_Material.vSpecular");
 	}
 
 	virtual void bind(graphics::Shader* shader)

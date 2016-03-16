@@ -29,7 +29,7 @@ void main()
 	//Compute the lighting in eye-space
 	float fDiffuse = NdotL;
 
-	float fSpecular = pow(NdotH; g_Material.vSpecular.w);
+	float fSpecular = pow(NdotH, g_Material.vSpecular.w);
 	float SelfShadow = 4.0 * fDiffuse;
 
 	//Combine lighting with the material properties
